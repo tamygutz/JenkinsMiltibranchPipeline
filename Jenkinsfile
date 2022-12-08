@@ -3,7 +3,7 @@ pipeline {
 		stages {
 			stage('First') {
 				environment { 
-                 		EXECUTE = TRUE 
+                 		EXECUTE = 'TRUE' 
             		}
 				steps {
 						echo 'Updating Second Satge'
