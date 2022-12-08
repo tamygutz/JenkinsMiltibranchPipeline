@@ -11,11 +11,12 @@ pipeline {
 			}
 
 			stage('Second') {
-				when {
-                environment name: 'EXECUTE', value: 'TRUE'
-            	}
 				steps {
-						echo 'Second stage can be executed' 
+					when {
+                    environment name: 'EXECUTE', value: 'TRUE'
+				    echo 'Second stage can be executed'
+            	}
+				 
 				}
 			} 
 
