@@ -22,7 +22,7 @@ pipeline {
 
 			stage('Third') {
 				steps {
-					when {
+					if {
                 	environment name: 'EXECUTE', value: 'FALSE'
 					echo 'Third stage can not be execute'
             		}
