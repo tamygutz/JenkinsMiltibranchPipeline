@@ -24,7 +24,7 @@ pipeline {
                 environment name: 'EXECUTE', value: 'FALSE'
             	}
 				steps {
-						echo 'Third stage can't be execute'
+						echo 'Third stage can not be execute'
 				}
 			}
 		}
