@@ -15,17 +15,17 @@ pipeline {
 					when {
                     environment name: 'EXECUTE', value: 'TRUE'
 				    echo 'Second stage can be executed'
-            	}
+            		}
 				 
 				}
 			} 
 
 			stage('Third') {
-				when {
-                environment name: 'EXECUTE', value: 'FALSE'
-            	}
 				steps {
-						echo 'Third stage can not be execute'
+					when {
+                	environment name: 'EXECUTE', value: 'FALSE'
+					echo 'Third stage can not be execute'
+            		}
 				}
 			}
 		}
