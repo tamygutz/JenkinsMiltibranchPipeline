@@ -11,21 +11,28 @@ pipeline {
 			}
 
 			stage('Second') {
+				when {
+                environment name: 'EXECUTE', value: 'TRUE'
+            	}
 				steps {
-					when {
-                    environment name: 'EXECUTE', value: 'TRUE'
-				    echo 'Second stage can be executed'
-            		}
-				 
+						echo 'Second stage can be executed'
+						script {
+							env.EXECUTE="TRUE"
+						}
+  
 				}
 			} 
 
 			stage('Third') {
+				when {
+                environment name: 'EXECUTE', value: 'FALSE'
+            	}
 				steps {
-					if {
-                	environment name: 'EXECUTE', value: 'FALSE'
-					echo 'Third stage can not be execute'
-            		}
+						echo 'Third stage can not be execute'
+						script {
+							env.EXECUTE="FALSE"
+						}
+
 				}
 			}
 		}
