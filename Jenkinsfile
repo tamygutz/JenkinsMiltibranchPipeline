@@ -6,8 +6,12 @@ pipeline {
                  		EXECUTE = 'TRUE' 
             		}
 				steps {
-						echo 'Updating Second Satge'
-				}
+                        script {
+                                             
+                                env.EXECUTE="True"                     
+
+                        }
+                }
 			}
 
 			stage('Second') {
@@ -15,8 +19,8 @@ pipeline {
                     environment name: 'EXECUTE', value: 'TRUE'
 				}
 				steps {
-                        script {
-                            env.EXECUTE = 'True'
+                         echo script {
+                            echo $EXECUTE
                         }
             	}
 			} 
