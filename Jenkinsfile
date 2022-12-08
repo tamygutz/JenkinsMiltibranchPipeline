@@ -6,7 +6,7 @@ pipeline {
                  		EXECUTE = TRUE 
             		}
 				steps {
-						echo "Updating Second Satge"
+						echo 'Updating Second Satge'
 				}
 			}
 
@@ -24,7 +24,7 @@ pipeline {
                 environment name: 'EXECUTE', value: 'FALSE'
             	}
 				steps {
-						echo "Third stage can't be execute"
+						echo 'Third stage can't be execute'
 				}
 			}
 		}
