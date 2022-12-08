@@ -11,14 +11,13 @@ pipeline {
 			}
 
 			stage('Second') {
-				environment { 
-                 		EXECUTE = 'TRUE' 
-            		}
 				when {
-					environment name: 'EXECUTE', value: 'TRUE'
+					env.EXECUTE = 'True'
 				}
 				steps {
-					echo 'Second stage can be executed'
+					echo script {
+						env.EXECUTE = 'True'
+					}
 				 
 				}
 			} 
