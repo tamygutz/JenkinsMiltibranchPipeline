@@ -15,10 +15,11 @@ pipeline {
                 environment name: 'EXECUTE', value: 'TRUE'
             	}
 				steps {
-						echo 'Second stage can be executed'
 						script {
 							env.EXECUTE="TRUE"
 						}
+
+						echo 'Second stage can be executed'
   
 				}
 			} 
