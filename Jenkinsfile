@@ -11,6 +11,9 @@ pipeline {
 			}
 
 			stage('Second') {
+				environment { 
+                 		EXECUTE = 'TRUE' 
+            		}
 				steps {
 					when {
                     environment name: 'EXECUTE', value: 'TRUE'
@@ -21,6 +24,9 @@ pipeline {
 			} 
 
 			stage('Third') {
+				environment { 
+                 		EXECUTE = 'TRUE' 
+            		}
 				when {
                 environment name: 'EXECUTE', value: 'FALSE'
             	}
