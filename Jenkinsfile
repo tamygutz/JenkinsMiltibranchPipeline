@@ -3,12 +3,12 @@ pipeline {
 		stages {
 			stage('First') {
 				environment { 
-                 		EXECUTE = 'TRUE' 
+                 		EXECUTE='TRUE' 
             		}
 				steps {
                         script {
                                              
-                                env.EXECUTE="True"                     
+                                env.EXECUTE='TRUE'                     
 
                         }
                 }
@@ -20,7 +20,7 @@ pipeline {
 				}
 				steps {
                          echo script {
-                            echo $EXECUTE
+                            env.EXECUTE= 'TRUE'
                         }
             	}
 			} 
